@@ -33,7 +33,7 @@ class Background : RenderableEntity {
         if let CanvasSize = canvas.canvasSize {
             var BackRect = Rect(topLeft:Point(x:0, y:0), size:Size(width:CanvasSize.width, height: CanvasSize.height))
             var BackRectangle = Rectangle(rect:BackRect, fillMode:.fill)
-            var FillColor = FillStyle(color:Color(.orange))
+            var FillColor = FillStyle(color:Color(.black))
             canvas.render(FillColor, BackRectangle)
         }
            //         if Artwork.isReady {

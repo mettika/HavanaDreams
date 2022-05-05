@@ -5,7 +5,6 @@ import Scenes
      Internally, it maintains the RenderableEntities for this layer.
    */
 
-
 class BackgroundLayer : Layer {
       let background = Background()
 
