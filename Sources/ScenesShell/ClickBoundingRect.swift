@@ -16,7 +16,9 @@ class ClickBoundingRect : RenderableEntity, EntityMouseClickHandler {
         let hitbox = rectangle.rect
         let containment = hitbox.containment(target:globalLocation)
         if !containment.intersection([.containedFully]).isEmpty {
-            print("\(globalLocation.x) Degrees North, \(globalLocation.y) Degrees East. TARGET ACQUIRED.")    
+            print("\(globalLocation.x) Degrees North, \(globalLocation.y) Degrees East. TARGET ACQUIRED.")
+            director.enqueueScene(scene: TutorialSelectionScene())
+            director.transitionToNextScene()
         }
         
     }
@@ -36,11 +38,6 @@ class ClickBoundingRect : RenderableEntity, EntityMouseClickHandler {
          let fillStyle = FillStyle(color:Color(.black))
          canvas.render(strokeStyle, fillStyle, rectangle)
      }
-
-
- /*   func boundingRect(SelectedRectangle:Rect) -> Rect {
-        return Rect(size: Size(width: SelectedRectangle.size.x, height: SelectedRectangle.size.y))
-        } */
 
      override func boundingRect() -> Rect {
          return Rect(size: Size(width: Int.max, height: Int.max))
